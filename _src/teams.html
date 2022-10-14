@@ -8,29 +8,30 @@ renderData:
   title: '{{ team.city }} {{ team.name }}'
 layout: player
 ---
+<div class="container">
+  <svg height="100" width="100">
+    <use xlink:href="#svg-{{ team.name | slug }}">
+  </svg>
 
-<svg height="100" width="100">
-  <use xlink:href="#svg-{{ team.name | slug }}">
-</svg>
+  <div>
+    <h2>{{ team.city}} {{ team.name }}</h2>
+  </div>
 
-<div>
-  <h2>{{ team.city}} {{ team.name }}</h2>
-</div>
-
-<table>
-  <tr>
-    <th>Pos</th>
-    <th>Player</th>
-    <th>Overall</th>
-  </tr>
-{% for player in rosters %}
-  {% if player.team_id == team.id %}
+  <table>
     <tr>
-      <td class="text-right">{{ player.position }}</td>
-      <td><a href="/player/{{ player.info.id }}/">{{ player.info.first_name }} {{ player.info.last_name }}</a></td>
-      <td class="text-right">{{ player.info.ratings[0].overall }}</td>
+      <th>Pos</th>
+      <th>Player</th>
+      <th>Overall</th>
     </tr>
-  {% endif %}
-{% endfor %}
-</table>
+  {% for player in rosters %}
+    {% if player.team_id == team.id %}
+      <tr>
+        <td class="text-right">{{ player.position }}</td>
+        <td><a href="/player/{{ player.info.id }}/">{{ player.info.first_name }} {{ player.info.last_name }}</a></td>
+        <td class="text-right">{{ player.info.ratings[0].overall }}</td>
+      </tr>
+    {% endif %}
+  {% endfor %}
+  </table>
 
+</div>
