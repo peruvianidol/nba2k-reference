@@ -5,11 +5,10 @@ const supabaseKey = process.env.SUPABASE_KEY;
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-module.exports = async function fetchTeams() {
+module.exports = async function fetchPlayers() {
   let { data } = await supabase
-  .from('teams')
-  .select('*')
-  .order('city');
-  
+  .from('players')
+  .select('*');
+
   return data;
 }

@@ -1,0 +1,21 @@
+---
+pagination:
+  data: players
+  size: 1
+  alias: player
+permalink: '/player/{{ player.id }}/'
+renderData:
+  title: '{{ player.first_name }} {{ player.last_name }}'
+layout: player
+---
+
+<!-- <svg>
+  <use xlink:href="#svg-{{ player.team | slug }}">
+</svg> -->
+
+<div>
+  <h2><span>{{ player.jersey_num }}</span> {{ player.first_name }} {{ player.last_name }} <span>{{ player.primary_pos }}</span></h2>
+  <p>{{ player.height }} / {{ player.weight }} lbs</p>
+  <p>{{ player.from }}</p>
+</div>
+

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font: inherit;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+header {
+  background-color: crimson;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+:where(a) {
+  color: inherit;
+}
+
+:where(h1, h2, h3) {
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+:where(h1) {
+  font-size: 2rem;
+}
+
+:where(h2) {
+  font-size: 1.5rem;
+}
+
+:where([role="list"]) {
+  list-style: none;
+  padding: 0;
+}
+
+:where(img) {
+  display: block;
+  max-width: 100%;
+}
+
+.grid {
+  --min: 80px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));;
+}
+
+.container {
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+.flow > :not(:last-child) {
+  margin-block-end: 1.5rem;
+}
+
+:where(th, td) {
+  padding: .25rem .5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(th) {
+  font-weight: 600;
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}

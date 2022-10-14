@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  {{ content | safe }}
+  <div hidden>{% svgsprite %}</div>
+  <header>
+    <h1 class="container"><a href="/">NBA 2k Reference</a></h2>
+  </header>
+  <main class="flow">
+    {{ content | safe }}
+  </main>
 </body>
 </html>
