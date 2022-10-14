@@ -1,0 +1,18 @@
+{
+  "name": "nba2k-reference",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.16",
+    "@supabase/supabase-js": "^2.0.0",
+    "dotenv": "^16.0.3"
+  }
+}
